@@ -149,3 +149,37 @@ const numberOrString = (val: number | string): string => {
 const isNumber = (val: number): boolean => {
   return typeof val === "number" ? true : false;
 };
+
+// Type casting /// type assertions
+
+type one = string;
+type two = string | number;
+type three = "hello";
+// converting to more or less specific
+let a: one = "hello";
+let b = a as two;
+let c = a as three;
+
+let d = <one>" world";
+// console.log(d);
+let e = <string | number>"world";
+
+const addOrconcat = (
+  a: number,
+  b: number,
+  c: "add" | "concat"
+): number | string => {
+  if (c === "add") return a + b;
+  return "" + a + b;
+};
+let myVal: string = addOrconcat(2, 3, "concat") as string;
+let nextVal: number = addOrconcat(2, 4, "add") as number;
+// DOM
+
+const img = document.querySelector("img")!; // Not null Assertion
+const myImage = document.getElementById("myImage") as HTMLImageElement;
+const nextImg = <HTMLImageElement>document.querySelector("img");
+
+img.src;
+
+myImage.src;

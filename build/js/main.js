@@ -116,3 +116,23 @@ const numberOrString = (val) => {
 const isNumber = (val) => {
     return typeof val === "number" ? true : false;
 };
+// converting to more or less specific
+let a = "hello";
+let b = a;
+let c = a;
+let d = " world";
+// console.log(d);
+let e = "world";
+const addOrconcat = (a, b, c) => {
+    if (c === "add")
+        return a + b;
+    return "" + a + b;
+};
+let myVal = addOrconcat(2, 3, "concat");
+let nextVal = addOrconcat(2, 4, "add");
+// DOM
+const img = document.querySelector("img"); // Not null Assertion
+const myImage = document.getElementById("myImage");
+const nextImg = document.querySelector("img");
+img.src;
+myImage.src;
